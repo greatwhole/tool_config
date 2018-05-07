@@ -31,3 +31,16 @@ echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nf
 brew install pyenv-virtualenv
 
 echo -e '\neval "$(pyenv init -)" \neval "$(pyenv virtualenv-init -)"' >> ~/.zsh_profile
+
+
+# emacs
+brew install emacs
+emacs --daemon
+
+cd ~
+mv .emacs.d .emacs.d.bak
+mv .emacs .emacs.bak
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+alias emacs-server="emacs --daemon"
+alias emacs="emacsclient"
+

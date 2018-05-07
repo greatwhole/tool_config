@@ -6,6 +6,21 @@
 # set -g mouse on
 # EOF
 
+# tmux plugin
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+cat <<EOF >> ~/.tmux.conf
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+
+# keep this line at the very bottom of tmux.conf
+run '~/.tmux/plugins/tpm/tpm'
+EOF
+
+tmux source ~/.tmux.conf
+
+
+
 brew install trash
 
 # pyenv
